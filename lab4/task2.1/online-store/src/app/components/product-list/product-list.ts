@@ -6,7 +6,7 @@ import { ProductItemComponent } from '../product-item/product-item';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductItemComponent], // Импортируем компоненты
+  imports: [CommonModule, ProductItemComponent],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
@@ -22,7 +22,6 @@ export class ProductListComponent {
       images: ['https://resources.cdn-kaspi.kz/img/m/p/p9d/p93/67520454.jpeg?format=gallery-medium', 'https://resources.cdn-kaspi.kz/img/m/p/pca/p8c/67520456.jpeg?format=gallery-medium', 'https://resources.cdn-kaspi.kz/img/m/p/p60/p89/67520457.jpeg?format=gallery-medium'],
       link: 'https://kaspi.kz/shop/p/chehol-jasper-dlja-apple-iphone-17-pro-prozrachnyi-146498145/?c=750000000'
     },
-    // Добавь еще 9 продуктов здесь...
     {
       id: 2,
       name: 'Попсокет 002 розовый',

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-item.css'
 })
 export class ProductItemComponent {
-  @Input() product!: Product; 
+  @Input() product!: Product;
+  @Output() remove = new EventEmitter<number>();
   currentImageIndex = 0;
 
   changeImage(index: number) {
@@ -26,7 +27,7 @@ export class ProductItemComponent {
     const url = `https://t.me/share/url?url=${encodeURIComponent(this.product.link)}&text=${encodeURIComponent(this.product.name)}`;
     window.open(url, '_blank');
   }
-
+  
   nextImage(event: Event) {
     event.stopPropagation(); 
     this.currentImageIndex = (this.currentImageIndex + 1) % this.product.images.length;
@@ -35,5 +36,13 @@ export class ProductItemComponent {
   prevImage(event: Event) {
     event.stopPropagation();
     this.currentImageIndex = (this.currentImageIndex - 1 + this.product.images.length) % this.product.images.length;
+  }
+
+  like() {
+    this.product.likes++;
+  }
+
+  deleteProduct() {
+    this.remove.emit(this.product.id); 
   }
 }

@@ -12,6 +12,7 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Галерея со стрелками */
 .gallery-container {
   position: relative;
   display: flex;
@@ -62,9 +63,10 @@
 }
 
 .dot.active {
-  background: #0089d0; 
+  background: #0089d0;
 }
 
+/* Текст и Цены */
 .product-title {
   color: #333;
   text-decoration: none;
@@ -134,3 +136,48 @@
 
 .tg { background: #24A1DE; color: white; }
 .wa { background: #25D366; color: white; }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.like-btn, .delete-btn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: 0.2s;
+}
+
+.like-btn:hover {
+  background-color: #fff0f0;
+  border-color: #ffb3b3;
+}
+
+.delete-btn:hover {
+  border-color: #f12b2c;
+  color: #f12b2c;
+}
+
+.share-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-share {
+  flex: 1;
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
