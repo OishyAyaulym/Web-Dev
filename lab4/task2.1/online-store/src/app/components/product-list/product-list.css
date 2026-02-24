@@ -1,0 +1,8 @@
+.product-grid {
+  display: grid;
+  /* Создает колонки, которые сами подстраиваются под ширину экрана */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px; /* Расстояние между карточками */
+  padding: 20px;
+  background-color: #f5f5f5;
+}

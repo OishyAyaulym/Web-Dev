@@ -1,0 +1,39 @@
+<div class="kaspi-card">
+  <div class="gallery-container">
+    <button class="arrow prev" (click)="prevImage($event)">❮</button>
+    
+    <div class="main-img-wrapper">
+      <img [src]="product.images[currentImageIndex]" [alt]="product.name" class="main-img">
+    </div>
+    
+    <button class="arrow next" (click)="nextImage($event)">❯</button>
+
+    <div class="dots">
+      @for (img of product.images; track $index) {
+        <span class="dot" [class.active]="$index === currentImageIndex" (click)="changeImage($index)"></span>
+      }
+    </div>
+  </div>
+
+  <div class="info">
+    <a [href]="product.link" target="_blank" class="product-title">
+      {{ product.name }}
+    </a>
+    
+    <div class="rating-row">
+      <span class="stars">★★★★★</span>
+      <span class="rating-count">({{ product.rating }})</span>
+    </div>
+
+    <div class="price-block">
+      <span class="current-price">{{ product.price | number:'1.0-0' }} ₸</span>
+    </div>
+    <a [href]="product.link" target="_blank" class="kaspi-buy-btn">
+      Купить
+    </a>
+    <div class="share-actions">
+      <button class="btn-share tg" (click)="shareOnTelegram()">Telegram</button>
+      <button class="btn-share wa" (click)="shareOnWhatsApp()">WhatsApp</button>
+    </div>
+  </div>
+</div>
