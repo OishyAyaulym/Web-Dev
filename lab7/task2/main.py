@@ -1,4 +1,4 @@
-from models import Car, ElectricScooter
+from models import Vehicle, Car, ElectricScooter
 
 def main():
     my_car = Car("Toyota", "Camry", 2022, "gasoline")
